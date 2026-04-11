@@ -4,21 +4,12 @@ import java.util.Scanner;
 
 public class EvenOdds {
 
-    static int target(int n, int k) {
+    static long target(long n, long k) {
 
-        int[] nums = new int[n];
-        int c = 0;
+        long oddCount = (n+1) / 2;
 
-        for(int i = 1; i <= n; i+=2) {
-            nums[c] = i;
-            c++;
-        }
-        for(int i = 2; i <= n; i+=2) {
-            nums[c] = i;
-            c++;
-        }
-
-        return nums[k-1];
+        if(k <= oddCount) return 2 * k - 1;
+        else return 2 * (k - oddCount);
 
     }
 
@@ -26,8 +17,8 @@ public class EvenOdds {
 
         Scanner s = new Scanner(System.in);
 
-        int n = s.nextInt();
-        int k = s.nextInt();
+        long n = s.nextLong();
+        long k = s.nextLong();
 
         System.out.println(target(n, k));
 
