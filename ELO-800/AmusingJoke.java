@@ -1,6 +1,7 @@
 // 141A - Amusing Joke
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public class AmusingJoke {
@@ -22,20 +23,20 @@ public class AmusingJoke {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
 
-        Scanner s = new Scanner(System.in);
-
-        String guess = s.nextLine();
-        String host = s.nextLine();
-        String pile = s.nextLine();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
+        
+        String guess = br.readLine();
+        String host = br.readLine();
+        String pile = br.readLine();
 
         boolean prank = pileLetter(guess, host, pile);
 
         if(prank) System.out.println("YES");
         else System.out.println("NO");
 
-        s.close();
+  
 
     }
 }
