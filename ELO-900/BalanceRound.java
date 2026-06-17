@@ -3,7 +3,6 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class BalanceRound {
@@ -14,41 +13,18 @@ public class BalanceRound {
 
         Arrays.sort(a);
 
-        ArrayList<ArrayList<Integer>> probSets = new ArrayList<>();
-        int set = 0;
-        boolean isAdded = false;
-
-        probSets.add(new ArrayList<Integer>());
+        int max = 1;
+        int currentSize = 1;
 
         for(int i = 0; i < n-1; i++) {
             if(Math.abs(a[i] - a[i+1]) <= k) {
-                
-                if(!isAdded) {
-                    probSets.get(set).add(a[i]);
-                    probSets.get(set).add(a[i+1]);
+                currentSize++;
 
-                    isAdded = true;
-                } else {
-                    probSets.get(set).add(a[i+1]);
-                }
-
-            } else {
-
-                if(probSets.get(set).size() > 0) {
-                    set++;
-                    isAdded = false;
-                    probSets.add(new ArrayList<Integer>());
-                }
-
-            }
+                if(currentSize > max) max = currentSize;
+            } else currentSize = 1;
         }
 
-        int max = 0;
-        for(ArrayList<Integer> row : probSets) {
-            if(row.size() > max) max = row.size();
-        }
-
-        return  n - max;
+        return n - max;
 
     }
 
