@@ -1,3 +1,5 @@
+// 750A - New Year and Hurry
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
