@@ -36,7 +36,6 @@ public class AmusingJoke {
         if(prank) System.out.println("YES");
         else System.out.println("NO");
 
-  
 
     }
 }
