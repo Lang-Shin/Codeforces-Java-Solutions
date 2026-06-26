@@ -9,32 +9,23 @@ public class SandD {
 
         int serejaPoint = 0;
         int dimaPoint = 0;
-        int vertex = 0;
 
         for(int i = 0; i < n; i++) {
 
-            int largest = Integer.MIN_VALUE;
+            int num1 = cards.get(0);
+            int num2 = cards.get(cards.size()-1);
+            int largest = 0;
 
-            for(int j = 0; j < cards.size(); j++) {
-
-                if(cards.get(j) > largest) {
-
-                    largest = cards.get(j);
-                    vertex = j;
-
-                }
-
+            if(num1 > num2) {
+                largest = num1;
+                cards.remove(0);
+            } else {
+                largest = num2;
+                cards.remove(cards.size()-1);
             }
 
-            if(i%2==0) {
-                serejaPoint += largest;
-                cards.remove(vertex);
-                
-            }
-            else {
-                dimaPoint += largest;
-                cards.remove(vertex);
-            }
+            if(i%2 == 0) serejaPoint += largest;
+            else dimaPoint += largest;
 
         }
 
@@ -55,5 +46,6 @@ public class SandD {
         int[] points = getPoints(n, cards);
 
         System.out.println(points[0] + " " + points[1]);
+
     }
 }
