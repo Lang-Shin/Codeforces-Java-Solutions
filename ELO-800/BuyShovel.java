@@ -1,3 +1,5 @@
+// 732A - Buy a Shovel
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
@@ -10,8 +12,7 @@ public class BuyShovel {
 
         while(true) {
 
-            if((k*shovel)%10 == 0) break;
-            else if(((k*shovel)-r)%10 == 0) break;
+            if(((k*shovel)%10 == 0) || (((k*shovel)-r)%10 == 0)) break;
 
             shovel++;
 
