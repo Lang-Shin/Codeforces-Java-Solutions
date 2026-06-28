@@ -5,13 +5,12 @@ import java.util.Arrays;
 
 public class OddQueries {
 
-    static String oddQuery(int[] arr, int l, int r, int k) {
+    static String oddQuery(int[] prefix, int totalSum, int l, int r, int k) {
 
-        int[] newArr = arr.clone();
+        int rangeSum = prefix[r] - prefix[l-1];
+        int newTotalSum = totalSum - rangeSum + k * (r-l+1);
 
-        Arrays.fill(newArr, l-1, r, k);
-        int sum = Arrays.stream(newArr).sum();
-        if(sum%2 == 0) return "No";
+        if(newTotalSum%2 == 0) return "No";
 
         return "Yes";
 
@@ -33,6 +32,10 @@ public class OddQueries {
             StringTokenizer st2 = new StringTokenizer(br.readLine());
             for(int j = 0; j < n; j++) arr[j] = Integer.parseInt(st2.nextToken());
 
+            int[] prefix = new int[n+1];
+            for(int j = 0; j < n; j++) prefix[j+1] = prefix[j] + arr[j];
+            int totalSum = prefix[n];
+
             for(int m = 0; m < q; m++) {
                 StringTokenizer st3 = new StringTokenizer(br.readLine());
 
@@ -40,7 +43,7 @@ public class OddQueries {
                 int r = Integer.parseInt(st3.nextToken());
                 int k = Integer.parseInt(st3.nextToken());
 
-                System.out.println(oddQuery(arr, l, r, k));
+                System.out.println(oddQuery(prefix, totalSum, l, r, k));
 
             }
 
