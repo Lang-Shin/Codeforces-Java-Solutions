@@ -1,7 +1,8 @@
+// 1807D - Odd Queries
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-import java.util.Arrays;
 
 public class OddQueries {
 
