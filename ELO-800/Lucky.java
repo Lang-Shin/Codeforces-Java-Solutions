@@ -1,3 +1,5 @@
+// 1676A - Lucky?
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
