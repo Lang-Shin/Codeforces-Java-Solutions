@@ -7,22 +7,16 @@ public class NYNumber {
 
         String[] str = new String[years.length];
 
-        for(int i = 0; i < years.length; i++) {
+       for(int i = 0; i < years.length; i++) {
 
-            if(years[i] < 2020) {
-                str[i] = "No"; 
-                continue;
-            }
+            int numOf2021 = years[i] % 2020;
+            int remainder = years[i] - 2021*numOf2021;
 
-            if((years[i]%2020) < 2000) {
-                str[i] = "Yes"; 
-                continue;
-            }
-            else str[i] = "No";
+            str[i] = (remainder>=0 && remainder%2020==0) ? "Yes" : "No";
 
-        }
+       }
 
-        return str;
+       return str;
 
     }
 
@@ -38,6 +32,7 @@ public class NYNumber {
         String[] outputs = wonderfulMoment(years);
 
         for(int i = 0; i < outputs.length; i++) System.out.println(outputs[i]);
+
 
     }
 }
