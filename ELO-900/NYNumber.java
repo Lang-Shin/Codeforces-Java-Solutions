@@ -1,3 +1,5 @@
+// 1475B - New Year's Number
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
