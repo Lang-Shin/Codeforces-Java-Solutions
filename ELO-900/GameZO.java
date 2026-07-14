@@ -5,9 +5,19 @@ public class GameZO {
 
     static String winner(String bit) {
 
-        int moves = bit.length() / 2;
+        char[] bits = bit.toCharArray();
 
-        return moves%2 == 0 ? "NET" : "DA";
+        int zeros = 0;
+        int ones = 0;
+
+        for(int i = 0; i < bits.length; i++) {
+            if(bits[i] == '0') zeros++;
+            else ones++;
+        }
+
+        int min = Math.min(zeros, ones);
+
+        return min%2 == 0 ? "NET" : "DA";
 
     }
 
