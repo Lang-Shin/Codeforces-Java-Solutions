@@ -1,3 +1,5 @@
+// 1878A - How much does a Daytona cost?
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
