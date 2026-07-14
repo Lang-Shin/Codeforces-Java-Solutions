@@ -1,23 +1,15 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-// import java.util.LinkedHashSet;
 
 public class HMDaytona {
 
     static String daytonaCost(int[] elem, int k) {
 
-        // LinkedHashSet<Integer> lhs = new LinkedHashSet<>();
         boolean isFound = false;
 
-        for(int i = 0; i < elem.length; i++) {
+        for(int i = 0; i < elem.length; i++) if(elem[i] == k) isFound = true;
 
-            if(elem[i] == k) isFound = true;
-
-            // lhs.add(elem[i]);
-        }
-
-        // if(lhs.size() < elem.length) return "Yes";
         if(isFound) return "Yes";
 
         return "No";
