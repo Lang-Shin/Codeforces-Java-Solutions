@@ -3,28 +3,19 @@ import java.io.InputStreamReader;
 
 public class Candies {
 
-    static int numOfCandies(long n) {
+    static long numOfCandies(long n) {
 
-        int x = 1;
-        int k = 1;
-        long output = 0;
+        for(int k = 2; k <= 31; k++) {
 
-        while(output != n) {
+            long divisor = (1L << k) - 1;
 
-            output = 0;
-            k = 1;
+            if(divisor > n) break;
 
-            while(output < n) {
-                output = output + ((1L << (k-1)) * x);
-                k++;
-            }
-
-            if((output == n) && (k > 1)) break;
-            x++;
+            if(n%divisor == 0) return n / divisor;
 
         }
 
-        return x;
+        return -1;
 
     }
 
