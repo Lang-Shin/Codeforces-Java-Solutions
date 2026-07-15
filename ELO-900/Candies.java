@@ -1,3 +1,5 @@
+// 1343A - Candies
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
