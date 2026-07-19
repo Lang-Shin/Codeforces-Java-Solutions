@@ -1,3 +1,5 @@
+// 1399A - Remove Smallest
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
