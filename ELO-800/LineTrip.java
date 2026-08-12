@@ -8,20 +8,16 @@ public class LineTrip {
     static int minVol(int[] a, int x) {
 
         int n = a.length;
-        int gap;
-        int stretched;
+        int maxGap = a[0];
 
-        if(n <= 1) {
-            gap = a[n-1];
-            stretched = 2 * (x-gap);
-
-            return stretched>=gap ? stretched : gap;
+        for(int i = 1; i < n; i++){
+            maxGap = Math.max(maxGap, a[i] - a[i-1]);
         }
 
-        gap = a[n-1] - a[n-2];
-        stretched = 2*(x-a[n-1]);
+        maxGap = Math.max(maxGap, 2*(x-a[n-1]));
 
-        return stretched>=gap ? stretched : gap;
+        return maxGap;
+        
     }
 
     public static void main(String[] args) throws Exception {
