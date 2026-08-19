@@ -1,3 +1,5 @@
+// 1760A - Median Number
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
