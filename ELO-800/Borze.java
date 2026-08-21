@@ -7,16 +7,18 @@ public class Borze {
 
         char[] tnnArr = ternaryNumNot.toCharArray();
         String interpreted = "";
-        int result = 0;
-
-        if(ternaryNumNot.startsWith(".")) interpreted += "0";
 
         for(int i = 0; i < tnnArr.length; i++) {
-            if(tnnArr[i] == '-') result++;
-            else result*=10;
+            if(tnnArr[i] == '.') interpreted += "0";
+            else if(tnnArr[i+1] == '.') {
+                interpreted += "1";
+                i++;
+            }
+            else {
+                interpreted += "2";
+                i++;
+            }
         }
-
-        interpreted = String.valueOf(interpreted + result);
 
         return interpreted;
         
