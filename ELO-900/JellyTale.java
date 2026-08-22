@@ -1,12 +1,14 @@
+// 1875A - Jellyfish and Undertale
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class JellyTale {
 
-    static int maxTime(int a, int b, int[] x) {
+    static long maxTime(long a, long b, long[] x) {
 
-        int overallTimer = b;
+        long overallTimer = b;
 
         for(int i = 0; i < x.length; i++) {
             overallTimer += Math.min(x[i], a-1);
@@ -25,13 +27,13 @@ public class JellyTale {
 
         for(int i = 0; i < t; i++) {
             StringTokenizer st1 = new StringTokenizer(br.readLine());
-            int a = Integer.parseInt(st1.nextToken());
-            int b = Integer.parseInt(st1.nextToken());
+            long a = Long.parseLong(st1.nextToken());
+            long b = Long.parseLong(st1.nextToken());
             int n = Integer.parseInt(st1.nextToken());
 
-            int[] x = new int[n];
+            long[] x = new long[n];
             StringTokenizer st2 = new StringTokenizer(br.readLine());
-            for(int j = 0; j < n; j++) x[j] = Integer.parseInt(st2.nextToken());
+            for(int j = 0; j < n; j++) x[j] = Long.parseLong(st2.nextToken());
 
             sb.append(maxTime(a, b, x) + "\n");
         }
