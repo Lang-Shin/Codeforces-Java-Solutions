@@ -9,12 +9,10 @@ public class JellyTale {
         int overallTimer = b;
 
         for(int i = 0; i < x.length; i++) {
-            if(x[i] > a) continue;
-
-            overallTimer += x[i];
+            overallTimer += Math.min(x[i], a-1);
         }
 
-        return (a+overallTimer) -1;
+        return overallTimer;
 
     }
 
