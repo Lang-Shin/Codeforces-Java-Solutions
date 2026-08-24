@@ -1,3 +1,5 @@
+// 977B - Two-gram
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
