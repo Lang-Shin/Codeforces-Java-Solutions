@@ -1,3 +1,5 @@
+// 1559A - Mocha and Math
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
