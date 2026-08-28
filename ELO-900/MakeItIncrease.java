@@ -6,19 +6,14 @@ public class MakeItIncrease {
 
     static int minNumOfOperation(int n, int[] a) {
         int operation = 0;
-        if(n == 1) return 0;
 
-        if(a[a.length-1] == 1) return -1;
-
-        int i = 0;
-        while(true) {
-            if(a[i] >= a[i+1]) {
-                a[i] /= 2;
-                operation++;
-                i = 0;
-            } else {
-                if(i == a.length-2) break;
-                i++;
+        for(int i = a.length-2; i >= 0; i--) {
+            while(a[i] >= a[i+1]) {
+                if(a[i] == 0) return -1;
+                else {
+                    a[i] /= 2;
+                    operation++;
+                }
             }
         }
 
