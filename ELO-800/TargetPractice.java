@@ -1,3 +1,5 @@
+// 1873C - Target Practice
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
