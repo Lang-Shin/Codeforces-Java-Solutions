@@ -1,3 +1,5 @@
+// 1985A - Creating Words
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
@@ -43,8 +45,6 @@ public class CreateWords {
             for(int j = 0; j < 2; j++) sb.append(swapped[j] + " ");
             sb.append("\n");
         }
-
-        System.out.println();
         System.out.println(sb);
 
     }
