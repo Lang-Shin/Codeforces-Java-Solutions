@@ -1,20 +1,36 @@
-// import java.io.BufferedReader;
-// import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
-// public class DislikeThrees {
-//     public static void main(String[] args) throws Exception {
+public class DislikeThrees {
 
-//         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//         int t = Integer.parseInt(br.readLine());
+    static int[] likeNum() {
+        int[] likesInt = new int[1000];
 
-//         for(int i = 0; i < t; i++) {
-//             int k = Integer.parseInt(br.readLine());
+        int val = 0;
+        for(int i = 0; i < 1000; i++) {
+            val++;
+            while(true) {
+                if(val%3 == 0 || val%10 == 3) val++;
+                else break;
+            }
+            likesInt[i] = val;
+        }
 
-//             if((k%3 != 0) && (k%10 != 3)) System.out.println(k);
-//             else {
-//                 val = k
-//             }
-//         }
+        return likesInt;
+    }
 
-//     }
-// }
+    public static void main(String[] args) throws Exception {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int t = Integer.parseInt(br.readLine());
+
+        int[] likesInt = likeNum();
+        for(int i = 0; i < t; i++) {
+            int k = Integer.parseInt(br.readLine());
+
+            System.out.println(likesInt[k-1]);
+        }
+
+
+    }
+}
