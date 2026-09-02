@@ -1,3 +1,5 @@
+// 1560A - Dislike of Threes
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
