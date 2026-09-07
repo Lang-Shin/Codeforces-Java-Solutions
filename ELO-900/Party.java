@@ -1,17 +1,35 @@
-// import java.io.BufferedReader;
-// import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
-// public class Party {
+public class Party {
 
-//     static 
+    static int superiorComplexity(int[] emp) {
+        int maxDepth = 0;
 
-//     public static void main(String[] args) throws Exception {
+        for(int i = 0; i < emp.length; i++) {
+            int depth = 1;
+            int current = i;
 
-//         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//         int n = Integer.parseInt(br.readLine());
+            while(emp[current] != -1) {
+                current = emp[current] - 1;
+                depth++;
+            }
 
-//         int[] emp = new int[n];
-//         for(int i = 0; i < n; i++) emp[i] = Integer.parseInt(br.readLine());
+            maxDepth = Math.max(maxDepth, depth);
+        }
 
-//     }
-// }
+        return maxDepth;
+    }
+
+    public static void main(String[] args) throws Exception {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+
+        int[] emp = new int[n];
+        for(int i = 0; i < n; i++) emp[i] = Integer.parseInt(br.readLine());
+
+        System.out.println(superiorComplexity(emp));
+
+    }
+}
