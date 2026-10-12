@@ -5,10 +5,10 @@ import java.util.StringTokenizer;
 public class Buttons {
 
     static String winner(int a, int b, int c) {
-        int sub = Math.abs(a - b);
-        sub+=c;
+        int shared = c%2;
+        if(shared == 1) b -= 1;
 
-        return (sub%2 == 1) ? "First" : "Second";
+        return (a > b) ? "First" : "Second";
     }
 
     public static void main(String[] args) throws Exception {
