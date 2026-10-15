@@ -1,19 +1,18 @@
-// 9A - Die Roll
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class DesignTutorial {
 
+    static String composite(int n) {
+        return (n%2 == 0) ? 4 + " " + (n-4) : 9 + " " + (n-9);
+    }
+
     public static void main(String[] args) throws Exception {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        double n = Integer.parseInt(br.readLine());
+        int n = Integer.parseInt(br.readLine());
 
-        int a = (int)Math.floor(n/2);
-        int b = (int)Math.ceil(n/2);
-
-        System.out.println(a + " " + b);
+        System.out.println(composite(n));
 
     }
 }
